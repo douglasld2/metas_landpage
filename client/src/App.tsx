@@ -15,6 +15,7 @@ import Contato from "@/pages/Contato";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import EstudoMercado from './pages/EstudoMercado';
+import WhatsAppButton from "@/components/WhatsAppButton"; // Added import
 
 function Router() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <WhatsAppButton /> {/* Added WhatsAppButton */}
       </TooltipProvider>
     </QueryClientProvider>
   );
