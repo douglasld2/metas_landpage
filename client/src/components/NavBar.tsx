@@ -44,13 +44,13 @@ const NavBar = () => {
           
           <div className="hidden md:flex space-x-5 items-center">
             {navItems.map((item) => (
-              <a 
+              <Link 
                 key={item.href}
-                href={item.href} 
+                href={item.href.startsWith('#') ? '/' + item.href : item.href}
                 className="text-sm hover:text-accent transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
           

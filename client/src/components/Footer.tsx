@@ -1,15 +1,5 @@
 import { Link } from "wouter";
 
-
-
-const productLinks = [
-  { label: "Recursos", href: "#recursos" },
-  { label: "Integrações", href: "#" },
-  { label: "Preços", href: "#" },
-  { label: "Estudos de caso", href: "#" },
-  { label: "API", href: "#" }
-];
-
 const supportLinks = [
   { label: "Ajuda", href: "/ajuda" },
   { label: "FAQ", href: "/faq" },
@@ -22,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="py-10 px-4 bg-dark/80">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div>
             <Link href="/">
               <div className="flex items-center space-x-2 mb-4 cursor-pointer">
@@ -45,30 +35,15 @@ const Footer = () => {
               infinitas possibilidades
             </p>
           </div>
-          
-          
-          
-          <div>
-            <h4 className="font-montserrat font-semibold text-base mb-3">Produto</h4>
-            <ul className="space-y-2">
-              {productLinks.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="text-gray-400 hover:text-accent transition-colors text-sm">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
+
           <div>
             <h4 className="font-montserrat font-semibold text-base mb-3">Suporte</h4>
             <ul className="space-y-2">
               {supportLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-400 hover:text-accent transition-colors text-sm">
+                  <Link href={link.href} className="text-gray-400 hover:text-accent transition-colors text-sm">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
