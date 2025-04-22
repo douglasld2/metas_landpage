@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Carlos Silva",
     company: "Rede de Postos Estrela, SP",
-    content: "Com o Metas, conseguimos aumentar nosso faturamento em 28% no primeiro trimestre. As metas personalizadas para cada unidade da nossa rede fizeram toda a diferença.",
+    content: "Com o Metas, conseguimos aumentar nosso faturamento em 12% no primeiro trimestre. As metas personalizadas para cada unidade da nossa rede fizeram toda a diferença.",
     rating: 5,
     initials: "CS"
   },
@@ -21,24 +21,24 @@ const testimonials = [
   {
     name: "Roberto Mendes",
     company: "Rede Abasteça, MG",
-    content: "A implementação foi rápida e a equipe de suporte é excepcional. O sistema nos ajuda a antecipar tendências e nos preparar para períodos de alta demanda.",
+    content: "A implementação foi rápida e a equipe de suporte é excepcional. O sistema nos ajuda a antecipar tendências de consumo e nos preparar para períodos de alta demanda.",
     rating: 5,
     initials: "RM"
   },
   {
     name: "Camila Ferreira",
     company: "Posto Rota Sul, RS",
-    content: "A integração com nosso ERP foi perfeita e sem qualquer interrupção nas operações. Os relatórios ajudaram a identificar oportunidades que estávamos perdendo.",
+    content: "A integração com nosso ERP foi perfeita e sem qualquer interrupção nas operações. Os relatórios ajudaram a identificar oportunidades de melhoria nos nossos processos.",
     rating: 5,
     initials: "CF"
   }
 ];
 
 const stats = [
-  { value: "98%", label: "Taxa de satisfação dos clientes" },
-  { value: "500+", label: "Postos utilizando o Metas" },
-  { value: "32%", label: "Aumento médio em vendas" },
-  { value: "15", label: "Estados atendidos" }
+  { value: "89%", label: "Taxa de satisfação dos clientes" },
+  { value: "350+", label: "Postos utilizando o Metas" },
+  { value: "14%", label: "Aumento médio em vendas" },
+  { value: "12", label: "Estados atendidos" }
 ];
 
 const TestimonialsSection = () => {
@@ -70,16 +70,16 @@ const TestimonialsSection = () => {
   }, [currentIndex]);
   
   return (
-    <section id="depoimentos" className="py-20 px-4 bg-dark/40 relative">
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+    <section id="depoimentos" className="py-16 px-4 bg-dark/60 relative">
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10"></div>
       
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl mb-4">
+          <div className="text-center mb-12">
+            <h2 className="font-montserrat font-bold text-2xl md:text-3xl mb-3">
               O que nossos <span className="text-gradient">clientes</span> dizem
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-xl mx-auto text-sm">
               Descubra como o Metas tem ajudado gestores de postos de combustível em todo o Brasil.
             </p>
           </div>
@@ -148,18 +148,18 @@ const TestimonialsSection = () => {
         </ScrollReveal>
         
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat, index) => (
             <ScrollReveal key={index}>
               <motion.div 
-                className="dark-glassmorphism rounded-xl p-6 text-center"
-                initial={{ opacity: 0, y: 20 }}
+                className="dark-glassmorphism rounded-lg p-4 text-center"
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="font-montserrat font-bold text-3xl mb-2 text-gradient">{stat.value}</h3>
-                <p className="text-gray-300">{stat.label}</p>
+                <h3 className="font-montserrat font-bold text-2xl mb-1 text-gradient">{stat.value}</h3>
+                <p className="text-gray-400 text-sm">{stat.label}</p>
               </motion.div>
             </ScrollReveal>
           ))}
