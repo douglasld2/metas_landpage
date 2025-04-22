@@ -39,6 +39,7 @@ export const insertContactFormSchema = createInsertSchema(contactForm).pick({
   phone: true,
   company: true,
   message: true,
+  createdAt: true,
 });
 
 // Export types
