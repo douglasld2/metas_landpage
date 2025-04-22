@@ -18,10 +18,10 @@ const NavBar = () => {
   }, []);
 
   const navItems = [
-    { label: "Recursos", href: "#recursos" },
-    { label: "Como Funciona", href: "#como-funciona" },
-    { label: "Estudos de Mercado", href: "#estudos" },
-    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Recursos", href: "/#recursos" },
+    { label: "Como Funciona", href: "/#como-funciona" },
+    { label: "Estudos de Mercado", href: "/#estudos" },
+    { label: "Depoimentos", href: "/#depoimentos" },
     { label: "Suporte", href: "/suporte" },
     { label: "FAQ", href: "/faq" },
   ];
@@ -81,14 +81,14 @@ const NavBar = () => {
           >
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
-                <a 
+                <Link 
                   key={item.href}
                   href={item.href} 
                   className="text-sm hover:text-accent transition-colors py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
