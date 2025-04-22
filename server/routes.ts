@@ -1,14 +1,14 @@
+
 import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { sendContactEmail } from './emailService';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
-  import { sendContactEmail } from './emailService';
-
-app.post("/api/contact", async (req: Request, res: Response) => {
+  app.post("/api/contact", async (req: Request, res: Response) => {
     try {
       // Validate request body against the schema
       const validatedData = contactFormSchema.parse(req.body);
