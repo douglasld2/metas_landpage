@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%; /* Dark background */
+  --foreground: 0 0% 98%; /* Light text */
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  
+  /* Purple theme colors */
+  --primary: 265 80% 57%; /* #6C3CE9 - Main purple */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 267 67% 35%; /* #461E94 - Dark purple */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 199 100% 65%; /* #4AC1FF - Accent blue */
+  --accent-foreground: 0 0% 98%;
+  --success: 156 65% 57%; /* #3DE5A8 - Success green */
+  --error: 0 69% 69%; /* #FF6961 - Error red */
+  --dark: 240 21% 15%; /* #1A1A2E - Dark background */
+  
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 265 80% 57%; /* Purple */
+  --chart-2: 199 100% 65%; /* Blue */
+  --chart-3: 156 65% 57%; /* Green */
+  --chart-4: 0 69% 69%; /* Red */
+  --chart-5: 35 100% 69%; /* Orange */
+  
+  /* Sidebar colors */
+  --sidebar-background: 240 10% 3.9%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 265 80% 57%;
+  --sidebar-primary-foreground: 211 100% 99%;
+  --sidebar-accent: 199 100% 65%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(to bottom, hsl(var(--dark)), hsl(var(--secondary)));
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Add Montserrat and Inter fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .dark-glassmorphism {
+    @apply bg-[#1A1A2E]/70 backdrop-blur-md border border-white/5;
+  }
+  
+  .gradient-border {
+    @apply relative rounded-xl isolate;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-primary to-accent -z-10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-animation-delay-1 {
+    animation: float 6s ease-in-out 1s infinite;
+  }
+  
+  .float-animation-delay-2 {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+}
