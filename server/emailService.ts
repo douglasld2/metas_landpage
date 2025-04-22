@@ -1,0 +1,34 @@
+
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+export const sendContactEmail = async (data: {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+}) => {
+  await transporter.sendMail({
+    from: process.env.SMTP_USER,
+    to: process.env.ADMIN_EMAIL || 'admin@metassoftware.com.br',
+    subject: `Nova mensagem de contato - ${data.name}`,
+    html: `
+      <h2>Nova mensagem de contato</h2>
+      <p><strong>Nome:</strong> ${data.name}</p>
+      <p><strong>Email:</strong> ${data.email}</p>
+      <p><strong>Telefone:</strong> ${data.phone}</p>
+      <p><strong>Empresa:</strong> ${data.company}</p>
+      <p><strong>Mensagem:</strong> ${data.message}</p>
+    `,
+  });
+};

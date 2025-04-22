@@ -14,6 +14,7 @@ import FAQ from "@/pages/FAQ";
 import Contato from "@/pages/Contato";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import EstudoMercado from './pages/EstudoMercado';
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/contato" component={Contato} />
         <Route path="/politica-de-privacidade" component={PrivacyPolicy} />
         <Route path="/termos-de-servico" component={TermsOfService} />
+        <Route path="/estudo-mercado" element={<EstudoMercado />} />
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

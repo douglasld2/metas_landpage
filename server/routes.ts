@@ -6,7 +6,9 @@ import { fromZodError } from "zod-validation-error";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
-  app.post("/api/contact", async (req: Request, res: Response) => {
+  import { sendContactEmail } from './emailService';
+
+app.post("/api/contact", async (req: Request, res: Response) => {
     try {
       // Validate request body against the schema
       const validatedData = contactFormSchema.parse(req.body);
@@ -20,6 +22,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: validatedData.message || "",
         createdAt: new Date().toISOString(),
       });
+
+      // Send email notification
+      await sendContactEmail(validatedData);
       
       res.status(201).json({
         message: "Formulário de contato enviado com sucesso",
