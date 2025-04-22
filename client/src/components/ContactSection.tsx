@@ -31,7 +31,7 @@ const contactInfo = [
   {
     icon: <MapPin className="text-2xl text-primary" />,
     title: "Endereço",
-    content: "Av. Paulista, 1000 - São Paulo, SP",
+    content: "Rua José de Picolli Mattei 132 - 89218-523- Costa e Silva  Joinville - Sc",
     bgColor: "bg-primary/20"
   }
 ];
@@ -81,7 +81,7 @@ const ContactSection = () => {
   return (
     <section id="contato" className="py-20 px-4 relative">
       <div className="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10"></div>
-      
+
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <ScrollReveal>
@@ -92,7 +92,7 @@ const ContactSection = () => {
               <p className="text-gray-300 mb-8">
                 Entre em contato conosco para uma demonstração personalizada e descubra como o Metas pode impulsionar os resultados do seu negócio.
               </p>
-              
+
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <motion.div 
@@ -113,8 +113,9 @@ const ContactSection = () => {
                   </motion.div>
                 ))}
               </div>
-              
-              <div className="flex gap-4">
+
+              {/* Social Media Buttons Commented Out */}
+              {/*<div className="flex gap-4">
                 {socialLinks.map((link, index) => (
                   <a 
                     key={index}
@@ -126,10 +127,10 @@ const ContactSection = () => {
                     {link.icon}
                   </a>
                 ))}
-              </div>
+              </div>*/}
             </div>
           </ScrollReveal>
-          
+
           <ScrollReveal>
             <motion.div 
               className="dark-glassmorphism gradient-border rounded-xl p-8"
@@ -139,7 +140,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
             >
               <h3 className="font-montserrat font-semibold text-2xl mb-6 text-center">Solicite uma demonstração</h3>
-              
+
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
@@ -159,7 +160,7 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="email"
@@ -178,7 +179,7 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="phone"
@@ -196,7 +197,7 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="company"
@@ -214,7 +215,7 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
@@ -232,7 +233,7 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/30 transition-all py-6 text-white"

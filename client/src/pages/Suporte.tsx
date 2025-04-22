@@ -7,13 +7,6 @@ import { Link } from "wouter";
 
 const supportOptions = [
   {
-    title: "Chat Ao Vivo",
-    description: "Converse diretamente com nossa equipe de suporte técnico em tempo real.",
-    icon: <MessageSquare className="h-6 w-6 text-primary" />,
-    action: "Iniciar Chat",
-    href: "#" 
-  },
-  {
     title: "Suporte por E-mail",
     description: "Envie sua dúvida por e-mail e receba uma resposta em até 24 horas.",
     icon: <Mail className="h-6 w-6 text-primary" />,
@@ -24,8 +17,8 @@ const supportOptions = [
     title: "Atendimento por Telefone",
     description: "Nossos especialistas estão disponíveis para atendê-lo das 8h às 18h.",
     icon: <Headset className="h-6 w-6 text-primary" />,
-    action: "Ver Telefones",
-    href: "#"
+    action: "Enviar E-mail",
+    href: "/contato"
   }
 ];
 

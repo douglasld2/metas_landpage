@@ -1,12 +1,6 @@
 import { Link } from "wouter";
 
-const companyLinks = [
-  { label: "Sobre nós", href: "#" },
-  { label: "Nossa equipe", href: "#" },
-  { label: "Carreiras", href: "#" },
-  { label: "Parceiros", href: "#" },
-  { label: "Blog", href: "#" }
-];
+
 
 const productLinks = [
   { label: "Recursos", href: "#recursos" },
@@ -28,7 +22,7 @@ const Footer = () => {
   return (
     <footer className="py-10 px-4 bg-dark/80">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div>
             <Link href="/">
               <div className="flex items-center space-x-2 mb-4 cursor-pointer">
@@ -52,18 +46,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
-            <h4 className="font-montserrat font-semibold text-base mb-3">Empresa</h4>
-            <ul className="space-y-2">
-              {companyLinks.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="text-gray-400 hover:text-accent transition-colors text-sm">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
           
           <div>
             <h4 className="font-montserrat font-semibold text-base mb-3">Produto</h4>

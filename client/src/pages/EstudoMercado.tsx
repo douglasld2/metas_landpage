@@ -41,6 +41,14 @@ export default function EstudoMercado() {
       subtitle="Panorama do Mercado de Combustíveis no Brasil"
     >
       <div className="space-y-8">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Endereço do Escritório</h2>
+          <p className="text-gray-400">
+            Rua José de Picolli Mattei 132<br />
+            Costa e Silva - Joinville/SC<br />
+            CEP: 89218-523
+          </p>
+        </div>
         <ScrollReveal>
           <Card className="p-6 dark-glassmorphism">
             <h2 className="text-2xl font-bold mb-4">Panorama do Mercado (2023)</h2>
