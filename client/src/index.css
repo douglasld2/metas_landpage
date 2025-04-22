@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: 240 10% 3.9%; /* Dark background */
+  --background: 240 15% 2.5%; /* Darker background */
   --foreground: 0 0% 98%; /* Light text */
-  --muted: 240 3.7% 15.9%;
+  --muted: 240 5% 12%;
   --muted-foreground: 240 5% 64.9%;
-  --popover: 240 10% 3.9%;
+  --popover: 240 15% 2.5%;
   --popover-foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
+  --card: 240 15% 3.5%;
   --card-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
+  --border: 240 5% 12%;
+  --input: 240 5% 12%;
   
-  /* Purple theme colors */
-  --primary: 265 80% 57%; /* #6C3CE9 - Main purple */
+  /* Deeper Purple theme colors */
+  --primary: 265 85% 50%; /* Deeper main purple */
   --primary-foreground: 211 100% 99%;
-  --secondary: 267 67% 35%; /* #461E94 - Dark purple */
+  --secondary: 267 75% 28%; /* Even darker purple */
   --secondary-foreground: 0 0% 98%;
-  --accent: 199 100% 65%; /* #4AC1FF - Accent blue */
+  --accent: 199 100% 60%; /* Slightly darker blue accent */
   --accent-foreground: 0 0% 98%;
-  --success: 156 65% 57%; /* #3DE5A8 - Success green */
-  --error: 0 69% 69%; /* #FF6961 - Error red */
-  --dark: 240 21% 15%; /* #1A1A2E - Dark background */
+  --success: 156 65% 45%; /* Deeper success green */
+  --error: 0 69% 60%; /* Deeper error red */
+  --dark: 240 25% 10%; /* Darker background */
   
   --accent-foreground: 0 0% 98%;
   --destructive: 0 62.8% 30.6%;
@@ -32,20 +32,20 @@
   --radius: 0.5rem;
   
   /* Chart colors */
-  --chart-1: 265 80% 57%; /* Purple */
-  --chart-2: 199 100% 65%; /* Blue */
-  --chart-3: 156 65% 57%; /* Green */
-  --chart-4: 0 69% 69%; /* Red */
-  --chart-5: 35 100% 69%; /* Orange */
+  --chart-1: 265 85% 50%; /* Purple */
+  --chart-2: 199 100% 60%; /* Blue */
+  --chart-3: 156 65% 45%; /* Green */
+  --chart-4: 0 69% 60%; /* Red */
+  --chart-5: 35 100% 60%; /* Orange */
   
   /* Sidebar colors */
-  --sidebar-background: 240 10% 3.9%;
+  --sidebar-background: 240 15% 2.5%;
   --sidebar-foreground: 0 0% 98%;
-  --sidebar-primary: 265 80% 57%;
+  --sidebar-primary: 265 85% 50%;
   --sidebar-primary-foreground: 211 100% 99%;
-  --sidebar-accent: 199 100% 65%;
+  --sidebar-accent: 199 100% 60%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-border: 240 5% 12%;
   --sidebar-ring: 240 4.9% 83.9%;
 }
 
@@ -75,11 +75,11 @@
 
 @layer utilities {
   .glassmorphism {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
   .dark-glassmorphism {
-    @apply bg-[#1A1A2E]/70 backdrop-blur-md border border-white/5;
+    @apply bg-[#121225]/80 backdrop-blur-md border border-white/5;
   }
   
   .gradient-border {
