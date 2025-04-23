@@ -35,9 +35,15 @@ export default function Home() {
     >
       <NavBar />
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <DashboardDemo />
+      <section id="recursos">
+        <FeaturesSection />
+      </section>
+      <section id="como-funciona">
+        <HowItWorksSection />
+      </section>
+      <section id="estudos">
+        <DashboardDemo />
+      </section>
       <ContactSection />
       <Footer />
     </motion.div>

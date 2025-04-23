@@ -18,13 +18,20 @@ const NavBar = () => {
   }, []);
 
   const navItems = [
-    { label: "Recursos", href: "/#recursos" },
-    { label: "Como Funciona", href: "/#como-funciona" },
-    { label: "Estudos de Mercado", href: "/#estudos" },
-    { label: "Depoimentos", href: "/#depoimentos" },
-    { label: "Suporte", href: "/suporte" },
-    { label: "FAQ", href: "/faq" },
+    { label: "Recursos", href: "#recursos", isScroll: true },
+    { label: "Como Funciona", href: "#como-funciona", isScroll: true },
+    { label: "Estudos de Mercado", href: "#estudos", isScroll: true },
+    { label: "Depoimentos", href: "#depoimentos", isScroll: true },
+    { label: "Suporte", href: "/suporte", isScroll: false },
+    { label: "FAQ", href: "/faq", isScroll: false },
   ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 px-4 py-2 transition-all duration-300 ${isScrolled ? 'bg-secondary/50 backdrop-blur-lg' : ''}`}>
@@ -41,25 +48,35 @@ const NavBar = () => {
               </div>
             </div>
           </Link>
-          
+
           <div className="hidden md:flex space-x-5 items-center">
             {navItems.map((item) => (
-              <Link 
-                key={item.href}
-                href={item.href.startsWith('#') ? '/' + item.href : item.href}
-                className="text-sm hover:text-accent transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+                item.isScroll ? (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href.substring(1))}
+                    className="text-sm hover:text-accent transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm hover:text-accent transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                )
+              ))}
           </div>
-          
+
           <a href="#contato">
             <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:shadow-md hover:shadow-primary/20 transition-all text-sm">
               Solicitar Demo
             </Button>
           </a>
-          
+
           <button 
             className="md:hidden text-xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -68,7 +85,7 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -81,14 +98,25 @@ const NavBar = () => {
           >
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  className="text-sm hover:text-accent transition-colors py-1"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                item.isScroll ? (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href.substring(1))}
+                    className="text-sm hover:text-accent transition-colors py-1"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm hover:text-accent transition-colors py-1"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
             </div>
           </motion.div>
