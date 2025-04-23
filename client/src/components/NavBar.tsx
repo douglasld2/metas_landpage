@@ -21,12 +21,15 @@ const NavBar = () => {
     { label: "Recursos", href: "#recursos", isScroll: true },
     { label: "Como Funciona", href: "#como-funciona", isScroll: true },
     { label: "Estudos de Mercado", href: "#estudos", isScroll: true },
-    { label: "Depoimentos", href: "#depoimentos", isScroll: true },
     { label: "Suporte", href: "/suporte", isScroll: false },
     { label: "FAQ", href: "/faq", isScroll: false },
   ];
 
   const scrollToSection = (sectionId) => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#' + sectionId;
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -101,9 +104,11 @@ const NavBar = () => {
                 item.isScroll ? (
                   <button
                     key={item.href}
-                    onClick={() => scrollToSection(item.href.substring(1))}
+                    onClick={() => {
+                      scrollToSection(item.href.substring(1));
+                      setMobileMenuOpen(false);
+                    }}
                     className="text-sm hover:text-accent transition-colors py-1"
-                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
                   </button>
