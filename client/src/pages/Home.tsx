@@ -4,8 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import DashboardDemo from "@/components/DashboardDemo";
-import MarketStudiesSection from "@/components/MarketStudiesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -40,8 +38,6 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorksSection />
       <DashboardDemo />
-      <MarketStudiesSection />
-      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </motion.div>
