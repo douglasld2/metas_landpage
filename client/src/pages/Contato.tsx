@@ -45,8 +45,8 @@ const contactInfo = [
     icon: <Mail className="h-5 w-5 text-primary" />,
     title: "E-mail",
     details: [
-      "contato@resolutesoftware.com.br",
-      "suporte@resolutesoftware.com.br"
+      "contato@resolutemetas.com.br",
+      "suporte@resolutemetas.com.br"
     ]
   },
   {

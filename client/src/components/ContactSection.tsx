@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: <Mail className="text-2xl text-primary" />,
     title: "Email",
-    content: "contato@metassoftware.com.br",
+    content: "contato@resolutemetas.com.br",
     bgColor: "bg-primary/20"
   },
   {

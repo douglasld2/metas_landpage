@@ -20,7 +20,7 @@ export const sendContactEmail = async (data: {
 }) => {
   await transporter.sendMail({
     from: process.env.SMTP_USER,
-    to: process.env.ADMIN_EMAIL || 'admin@metassoftware.com.br',
+    to: process.env.ADMIN_EMAIL || 'contato@resolutemetas.com.br',
     subject: `Nova mensagem de contato - ${data.name}`,
     html: `
       <h2>Nova mensagem de contato</h2>
