@@ -7,6 +7,10 @@ import DashboardDemo from "@/components/DashboardDemo";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import FuelMarketChart from "@/components/FuelMarketChart";
+import GasStationKPISection from "@/components/GasStationKPISection";
+import FuelMarketTrends from "@/components/FuelMarketTrends";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function Home() {
   // Add parallax effect on scroll
@@ -35,15 +39,36 @@ export default function Home() {
     >
       <NavBar />
       <HeroSection />
+      
       <section id="recursos">
         <FeaturesSection />
       </section>
+      
+      <section id="dados-mercado">
+        <div className="max-w-6xl mx-auto px-4 py-10">
+          <h2 className="font-montserrat font-bold text-2xl md:text-3xl mb-6 text-center">
+            Dados do <span className="text-gradient">Mercado</span> em Tempo Real
+          </h2>
+          <FuelMarketChart />
+        </div>
+      </section>
+      
       <section id="como-funciona">
         <HowItWorksSection />
       </section>
+      
+      <GasStationKPISection />
+      
       <section id="estudos">
         <DashboardDemo />
       </section>
+      
+      <FuelMarketTrends />
+      
+      <section id="depoimentos">
+        <TestimonialsSection />
+      </section>
+      
       <ContactSection />
       <Footer />
     </motion.div>
