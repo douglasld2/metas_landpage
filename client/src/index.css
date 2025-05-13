@@ -112,4 +112,58 @@
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
   }
+  
+  /* Gradientes para cards de dados */
+  .bg-fuel-gradient {
+    background: linear-gradient(135deg, rgba(108, 60, 233, 0.2) 0%, rgba(61, 229, 168, 0.1) 100%);
+  }
+
+  .bg-convenience-gradient {
+    background: linear-gradient(135deg, rgba(74, 193, 255, 0.2) 0%, rgba(255, 105, 97, 0.1) 100%);
+  }
+
+  .bg-performance-gradient {
+    background: linear-gradient(135deg, rgba(147, 112, 219, 0.2) 0%, rgba(254, 177, 68, 0.1) 100%);
+  }
+
+  /* Card com efeito iluminado */
+  .data-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .data-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent, 
+      rgba(108, 60, 233, 0.1), 
+      transparent 30%
+    );
+    animation: rotate 8s linear infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  /* Pulse animation */
+  .pulse-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
 }
