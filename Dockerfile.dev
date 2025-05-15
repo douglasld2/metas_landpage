@@ -1,0 +1,17 @@
+FROM node:20
+
+# Define diretório de trabalho
+WORKDIR /app
+
+# Copia apenas os arquivos de dependências para cache
+COPY package*.json ./
+
+# Instala dependências (incluindo dev)
+RUN npm install
+
+# Copia todo o projeto
+COPY . .
+
+# Expõe as portas do Vite e Express
+EXPOSE 5173
+EXPOSE 3000

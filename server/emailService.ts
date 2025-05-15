@@ -1,5 +1,7 @@
 
 import nodemailer from 'nodemailer';
+import dotenv from "dotenv";
+dotenv.config()
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -18,6 +20,8 @@ export const sendContactEmail = async (data: {
   company: string;
   message: string;
 }) => {
+  console.log(data)
+
   await transporter.sendMail({
     from: process.env.SMTP_USER,
     to: process.env.ADMIN_EMAIL || 'contato@resolutemetas.com.br',

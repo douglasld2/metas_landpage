@@ -5,14 +5,24 @@ import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 import { sendContactEmail } from './emailService';
+import dotenv from "dotenv";
+
+dotenv.config()
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
+
+  app.get('/api/ping', async (req: Request, res: Response) => {
+    res.status(200).send(process.env);
+  });
+
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
       // Validate request body against the schema
       const validatedData = contactFormSchema.parse(req.body);
-      
+
+
+
       // Create a contact form submission in storage
       const result = await storage.createContactSubmission({
         name: validatedData.name,

@@ -25,13 +25,13 @@ const contactInfo = [
   {
     icon: <Phone className="text-2xl text-primary" />,
     title: "Telefone",
-    content: "(11) 4002-8922",
+    content: "(47) 9 8870-7685",
     bgColor: "bg-primary/20"
   },
   {
     icon: <MapPin className="text-2xl text-primary" />,
     title: "Endereço",
-    content: "Rua José de Picolli Mattei 132 - 89218-523- Costa e Silva  Joinville - Sc",
+    content: "Rua José de Picolli Mattei 132 - 89218-523 - Costa e Silva - Joinville - SC",
     bgColor: "bg-primary/20"
   }
 ];
@@ -68,6 +68,7 @@ const ContactSection = () => {
       });
       form.reset();
     } catch (error) {
+      console.log(error)
       toast({
         title: "Erro ao enviar",
         description: "Ocorreu um erro ao enviar seu formulário. Tente novamente mais tarde.",
