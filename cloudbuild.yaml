@@ -20,5 +20,5 @@ steps:
       - '--allow-unauthenticated'
       - '--port=3000'
 
-images:
-  - 'gcr.io/$PROJECT_ID/metas_landpage'
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
