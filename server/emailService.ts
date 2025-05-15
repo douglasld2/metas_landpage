@@ -21,6 +21,7 @@ export const sendContactEmail = async (data: {
   message: string;
 }) => {
   console.log(data)
+  console.log(process.env.SMTP_USER)
 
   await transporter.sendMail({
     from: process.env.SMTP_USER,
