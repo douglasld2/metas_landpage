@@ -180,13 +180,6 @@ export default function FuelMarketTrends() {
                   </Card>
                 </ScrollReveal>
               ))}
-              
-              <div className="text-center mt-8">
-                <Button variant="outline" className="group">
-                  Ver mais tendências do mercado
-                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
             </TabsContent>
           ))}
         </Tabs>

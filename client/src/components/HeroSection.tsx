@@ -84,7 +84,7 @@ const HeroSection = () => {
                 </div>
               </div>
               <div>
-                <p className="font-medium"><span className="text-success">+500</span> gestores</p>
+                <p className="font-medium"><span className="text-success">+150</span> gestores</p>
                 <p className="text-sm text-gray-300">já utilizam o Metas</p>
               </div>
             </motion.div>
