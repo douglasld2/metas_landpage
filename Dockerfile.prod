@@ -27,4 +27,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Comando para iniciar o servidor
-CMD ["node", "dist/server/index.js"]
+CMD ["npm", "run", "start"]
