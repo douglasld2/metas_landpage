@@ -1,28 +1,30 @@
 # Etapa 1: Build de frontend e backend
-FROM node:18 AS builder
+FROM node:20 AS builder
 
 WORKDIR /app
 
 COPY . .
 
-# Instala todas as dependências
 RUN npm install
 
-# Gera o build do frontend (Vite) e do backend (esbuild)
+# Gera o build do frontend (Vite) e backend (esbuild)
 RUN npm run build
 
 # Etapa 2: Imagem final com arquivos prontos
-FROM node:18
+FROM node:20
 
 WORKDIR /app
 
-# Copia os arquivos necessários do build
-COPY --from=builder /app/package.json /app/package-lock.json* /app/
-COPY --from=builder /app/dist /app/dist
-COPY --from=builder /app/node_modules /app/node_modules
+# Copia apenas o necessário da build
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
 
 # Exponha a porta que o Express usa
 EXPOSE 3000
 
+# Define variável de ambiente padrão (caso queira)
+ENV NODE_ENV=production
+
 # Comando para iniciar o servidor
-CMD ["npm", "run", "start"]
+CMD ["node", "dist/server/index.js"]

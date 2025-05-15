@@ -11,14 +11,14 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
-      - 'run'
-      - 'deploy'
-      - 'metas-landpage'
-      - '--image=gcr.io/$PROJECT_ID/metas-landpage'
-      - '--region=us-central1'
-      - '--platform=managed'
-      - '--allow-unauthenticated'
-      - '--port=3000'
+      - run
+      - deploy
+      - metas-landpage
+      - --image=gcr.io/$PROJECT_ID/metas-landpage
+      - --region=us-central1
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=3000
 
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
