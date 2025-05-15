@@ -1,11 +1,11 @@
 steps:
   # Etapa 1: Build da imagem Docker
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'Dockerfile.prod', '-t', 'gcr.io/$PROJECT_ID/metas_landpage', '.']
+    args: ['build', '-f', 'Dockerfile.prod', '-t', 'gcr.io/$PROJECT_ID/metas-landpage', '.']
 
   # Etapa 2: Push da imagem para o Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/metas_landpage']
+    args: ['push', 'gcr.io/$PROJECT_ID/metas-landpage']
 
   # Etapa 3: Deploy para o Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,8 +13,8 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'metas_landpage'
-      - '--image=gcr.io/$PROJECT_ID/metas_landpage'
+      - 'metas-landpage'
+      - '--image=gcr.io/$PROJECT_ID/metas-landpage'
       - '--region=us-central1'
       - '--platform=managed'
       - '--allow-unauthenticated'
