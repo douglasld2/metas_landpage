@@ -12,16 +12,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
 
   app.get('/api/ping', async (req: Request, res: Response) => {
-    export const testSMTPConnection = () => {
-      const socket = net.createConnection({ host: 'smtp.seudominio.com', port: 26 }, () => {
-        console.log('✅ Conectado com sucesso à porta 26');
-        socket.end();
-      });
+    const socket = net.createConnection({ host: 'smtp.seudominio.com', port: 26 }, () => {
+      console.log('✅ Conectado com sucesso à porta 26');
+      socket.end();
+    });
 
-      socket.on('error', (err) => {
-        console.error('❌ Erro na conexão:', err.message);
-      });
-    };
+    socket.on('error', (err) => {
+      console.error('❌ Erro na conexão:', err.message);
+    });
   });
 
   app.post("/api/contact", async (req: Request, res: Response) => {
