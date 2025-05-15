@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Rogério",
     company: "Rede Rodobrás, MT",
-    content: "Agora ficou mais fácil controlar e estimular a venda de aditivada, consigo controlar as vendas de diesel para frentistas específicos e isso aumenta a produtividade da minha equipe.",
+    content: "Muito bom controlar e estimular a venda de aditivada, consigo controlar as vendas de diesel para frentistas específicos e isso aumenta a produtividade da minha equipe.",
     rating: 5,
     initials: "RB"
   },
