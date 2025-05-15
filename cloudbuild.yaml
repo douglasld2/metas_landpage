@@ -18,7 +18,7 @@ steps:
       - --region=us-central1
       - --platform=managed
       - --allow-unauthenticated
-      - --vpc-connector=metas-landpage
+      - --vpc-connector=connector-metas-landpage
       - --vpc-egress=all
       - --port=3000
 
