@@ -5,9 +5,7 @@ import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 import { sendContactEmail } from './emailService';
-import dotenv from "dotenv";
 
-dotenv.config()
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -20,8 +18,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       // Validate request body against the schema
       const validatedData = contactFormSchema.parse(req.body);
-
-
 
       // Create a contact form submission in storage
       const result = await storage.createContactSubmission({
@@ -41,6 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         id: result.id
       });
     } catch (error) {
+      console.log(error)
       if (error instanceof Error) {
         // Handle validation errors
         if (error.name === "ZodError") {
@@ -53,7 +50,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         
         // Handle other errors
         return res.status(500).json({ 
-          message: "Erro ao processar solicitação",
+          message: error.message,
           error: error.message 
         });
       }
