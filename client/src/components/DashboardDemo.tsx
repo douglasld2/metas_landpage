@@ -35,10 +35,9 @@ const barData = [
 ];
 
 const mobileFeatures = [
-  "Notificações em tempo real de metas atingidas",
   "Dashboards otimizados para telas menores",
   "Compartilhamento fácil de relatórios com a equipe",
-  "Modo offline para áreas com conectividade limitada"
+  "Acesso fácil no computador ou celular"
 ];
 
 const DashboardDemo = () => {

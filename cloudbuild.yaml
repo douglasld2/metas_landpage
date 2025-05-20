@@ -1,25 +1,31 @@
 steps:
   # Etapa 1: Build da imagem Docker
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'Dockerfile.prod', '-t', 'gcr.io/$PROJECT_ID/metas_landpage', '.']
+    args: ['build', '-f', 'Dockerfile.prod', '-t', 'gcr.io/$PROJECT_ID/metas-landpage', '.']
 
   # Etapa 2: Push da imagem para o Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/metas_landpage']
+    args: ['push', 'gcr.io/$PROJECT_ID/metas-landpage']
 
   # Etapa 3: Deploy para o Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
-      - 'run'
-      - 'deploy'
-      - 'metas_landpage'
-      - '--image=gcr.io/$PROJECT_ID/metas_landpage'
-      - '--region=us-central1'
-      - '--platform=managed'
-      - '--allow-unauthenticated'
-      - '--port=3000'
+      - run
+      - deploy
+      - metas-landpage
+      - --image=gcr.io/$PROJECT_ID/metas-landpage
+      - --region=us-central1
+      - --platform=managed
+      - --allow-unauthenticated
+      - --vpc-connector=connector-metas-landpage
+      - --vpc-egress=all
+      - --port=3000
 
 options:
+<<<<<<< HEAD
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET 
 
+=======
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+>>>>>>> google_deploy

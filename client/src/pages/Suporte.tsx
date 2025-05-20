@@ -15,10 +15,10 @@ const supportOptions = [
   },
   {
     title: "Atendimento por Telefone",
-    description: "Nossos especialistas estão disponíveis para atendê-lo das 8h às 18h.",
+    description: "Nossos especialistas estão disponíveis para atendê-lo das 8h às 18h. no WhatsApp +55 (47)98870-7685",
     icon: <Headset className="h-6 w-6 text-primary" />,
-    action: "Enviar E-mail",
-    href: "/contato"
+    action: "Enviar WhatsApp",
+    href: "https://wa.me/5547988707685"
   }
 ];
 
@@ -29,15 +29,15 @@ const commonQuestions = [
   },
   {
     question: "É possível acessar o sistema de qualquer dispositivo?",
-    answer: "Sim, o Metas é uma plataforma baseada em nuvem que pode ser acessada de qualquer dispositivo com conexão à internet, incluindo smartphones, tablets e computadores. Também oferecemos aplicativos dedicados para Android e iOS."
+    answer: "Sim, o Metas é uma plataforma baseada em nuvem que pode ser acessada de qualquer dispositivo com conexão à internet, incluindo smartphones, tablets e computadores."
   },
   {
     question: "Quanto tempo leva para implementar o sistema?",
-    answer: "A implementação completa do Metas geralmente leva de 5 a 10 dias úteis, incluindo a integração com seu sistema atual, treinamento da equipe e personalização das metas e indicadores de acordo com as necessidades do seu negócio."
+    answer: "A implementação completa do Metas geralmente leva de 5 a 15 dias úteis, incluindo a integração com seu sistema atual, treinamento da equipe e personalização das metas e indicadores de acordo com as necessidades do seu negócio."
   },
   {
     question: "Como funciona o suporte técnico?",
-    answer: "Oferecemos suporte técnico através de múltiplos canais: chat ao vivo, e-mail, telefone e portal do cliente. Nossa equipe de especialistas está disponível nos dias úteis das 8h às 18h, e mantemos um sistema de plantão para emergências fora desse horário."
+    answer: "Oferecemos suporte técnico através dos seguints canais: e-mail, telefone, whatsapp. Nossa equipe de especialistas está disponível nos dias úteis das 8h às 18h, e mantemos um sistema de plantão para emergências fora desse horário."
   },
 ];
 

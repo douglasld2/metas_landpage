@@ -5,39 +5,39 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos Silva",
-    company: "Rede de Postos Estrela, SP",
-    content: "Com o Metas, conseguimos aumentar nosso faturamento em 12% no primeiro trimestre. As metas personalizadas para cada unidade da nossa rede fizeram toda a diferença.",
+    name: "Marcos",
+    company: "Rede Raul Lins, PE",
+    content: "Agora ficou mais fácil controlar a comissão dos frentistas e dos trocadores de óleo, cada um busca o seu melhor e ainda posso adaptar por turnos!",
     rating: 5,
-    initials: "CS"
+    initials: "RL"
   },
   {
-    name: "Ana Oliveira",
-    company: "Auto Posto Horizonte, RJ",
-    content: "Os insights sobre o comportamento de compra dos clientes nos permitiram otimizar nossa loja de conveniência. Nunca tivemos tanta clareza sobre o nosso negócio.",
+    name: "Diagini",
+    company: "Rede São Cristóvão, PR",
+    content: "As metas são dinâmicas e com pouco tempo modifico para o mes vigente, o acompanhamento nas televisões poupa muito o meu tempo e deixa os frentistas atualizados!",
     rating: 4.5,
-    initials: "AO"
+    initials: "SC"
   },
   {
-    name: "Roberto Mendes",
-    company: "Rede Abasteça, MG",
-    content: "A implementação foi rápida e a equipe de suporte é excepcional. O sistema nos ajuda a antecipar tendências de consumo e nos preparar para períodos de alta demanda.",
+    name: "Rogério",
+    company: "Rede Rodobrás, MT",
+    content: "Muito bom controlar e estimular a venda de aditivada, consigo controlar as vendas de diesel para frentistas específicos e isso aumenta a produtividade da minha equipe.",
     rating: 5,
-    initials: "RM"
+    initials: "RB"
   },
   {
-    name: "Camila Ferreira",
-    company: "Posto Rota Sul, RS",
+    name: "Camila",
+    company: "Rede Parati, RS",
     content: "A integração com nosso ERP foi perfeita e sem qualquer interrupção nas operações. Os relatórios ajudaram a identificar oportunidades de melhoria nos nossos processos.",
     rating: 5,
-    initials: "CF"
+    initials: "PA"
   }
 ];
 
 const stats = [
   { value: "89%", label: "Taxa de satisfação dos clientes" },
-  { value: "350+", label: "Postos utilizando o Metas" },
-  { value: "14%", label: "Aumento médio em vendas" },
+  { value: "250+", label: "Postos utilizando o Metas" },
+  { value: "13%", label: "Aumento médio em vendas" },
   { value: "12", label: "Estados atendidos" }
 ];
 

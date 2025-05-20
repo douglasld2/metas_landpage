@@ -5,23 +5,27 @@ import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 import { sendContactEmail } from './emailService';
-import dotenv from "dotenv";
+import net from 'net';
 
-dotenv.config()
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
 
   app.get('/api/ping', async (req: Request, res: Response) => {
-    res.status(200).send(process.env);
+    const socket = net.createConnection({ host: 'smtp.seudominio.com', port: 26 }, () => {
+      console.log('✅ Conectado com sucesso à porta 26');
+      socket.end();
+    });
+
+    socket.on('error', (err) => {
+      console.error('❌ Erro na conexão:', err.message);
+    });
   });
 
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
       // Validate request body against the schema
       const validatedData = contactFormSchema.parse(req.body);
-
-
 
       // Create a contact form submission in storage
       const result = await storage.createContactSubmission({
@@ -41,6 +45,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         id: result.id
       });
     } catch (error) {
+      console.log(error)
       if (error instanceof Error) {
         // Handle validation errors
         if (error.name === "ZodError") {
@@ -53,7 +58,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         
         // Handle other errors
         return res.status(500).json({ 
-          message: "Erro ao processar solicitação",
+          message: error.message,
           error: error.message 
         });
       }

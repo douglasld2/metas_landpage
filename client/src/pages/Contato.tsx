@@ -28,17 +28,16 @@ const contactInfo = [
     icon: <MapPin className="h-5 w-5 text-primary" />,
     title: "Endereço",
     details: [
-      "Av. Paulista, 1000, 10º andar",
-      "Bela Vista - São Paulo/SP",
-      "CEP: 01310-100"
+      "Rua José de Picolli Mattei, 132",
+      "Costa e Silva - Joinville/SC",
+      "CEP: 89218-523"
     ]
   },
   {
     icon: <Phone className="h-5 w-5 text-primary" />,
     title: "Telefone",
     details: [
-      "+55 (11) 3000-1000",
-      "+55 (11) 98765-4321"
+      "+55 (47) 9 8870-7685",
     ]
   },
   {
@@ -46,7 +45,6 @@ const contactInfo = [
     title: "E-mail",
     details: [
       "contato@resolutemetas.com.br",
-      "suporte@resolutemetas.com.br"
     ]
   },
   {

@@ -19,7 +19,7 @@ const generalFaqs = [
   },
   {
     question: "Posso experimentar o Metas antes de contratar?",
-    answer: "Sim, oferecemos uma demonstração gratuita de 14 dias com todas as funcionalidades disponíveis. Durante este período, nossa equipe técnica irá auxiliar na configuração inicial e responder a todas as suas dúvidas. Não é necessário cartão de crédito para iniciar o período de teste."
+    answer: "Sim, oferecemos uma demonstração gratuita de 30 dias com todas as funcionalidades disponíveis. Durante este período, nossa equipe técnica irá auxiliar na configuração inicial e responder a todas as suas dúvidas. Não é necessário cartão de crédito para iniciar o período de teste."
   },
   {
     question: "O sistema funciona para redes de postos ou apenas para unidades individuais?",
@@ -30,11 +30,11 @@ const generalFaqs = [
 const technicalFaqs = [
   {
     question: "Com quais sistemas ERP o Metas é compatível?",
-    answer: "O Metas possui integrações nativas com os principais sistemas ERP do mercado de combustíveis, incluindo SoftLub, Sigilo, Controller, EcoPosto, entre outros. Caso seu sistema não esteja na lista, nossa equipe de desenvolvimento pode criar uma integração personalizada."
+    answer: "O Metas possui integrações nativas com os principais sistemas ERP do mercado de combustíveis. Caso seu sistema não esteja na lista, nossa equipe de desenvolvimento pode criar uma integração personalizada."
   },
   {
     question: "Como é feita a atualização dos dados no sistema?",
-    answer: "A sincronização dos dados pode ser configurada de acordo com suas necessidades - em tempo real, a cada hora, ou em intervalos personalizados. Para a maioria dos clientes, atualizações a cada 3-6 horas são suficientes para manter os relatórios atualizados sem sobrecarregar o sistema ERP."
+    answer: "A sincronização dos dados pode ser configurada de acordo com suas necessidades - em tempo real, a cada hora, ou em intervalos personalizados. Para a maioria dos clientes, atualizações a cada 30 minutos são suficientes para manter as dashboards e relatórios atualizados sem sobrecarregar o sistema ERP."
   },
   {
     question: "Qual a capacidade de armazenamento disponível?",
