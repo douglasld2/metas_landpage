@@ -34,9 +34,6 @@ export const sendContactEmail = async (data: {
   company: string;
   message: string;
 }) => {
-  console.log(data)
-  console.log(process.env.SMTP_USER)
-
   await transporter.sendMail({
     from: process.env.SMTP_USER,
     to: process.env.ADMIN_EMAIL || 'contato@resolutemetas.com.br',
